@@ -1,0 +1,47 @@
+{% set desktopCols = data.widget.columnsDesktop or 6 %}
+{% set tabletCols = data.widget.columnsTablet or 3 %}
+{% set mobileCols = data.widget.columnsMobile or 2 %}
+{% set maxWidth = data.widget.imageMaxWidth or 120 %}
+{% set gap = data.widget.gap or 'md' %}
+{% set align = data.widget.align or 'center' %}
+{% set grayscale = data.widget.grayscale %}
+
+{% if data.widget.items and data.widget.items.length %}
+    <div
+            class="icon-list-widget icon-list-widget--gap-{{ gap }} icon-list-widget--align-{{ align }}{% if grayscale %} icon-list-widget--grayscale{% endif %}"
+            style="
+                    --icon-list-cols-desktop: {{ desktopCols }};
+                    --icon-list-cols-tablet: {{ tabletCols }};
+                    --icon-list-cols-mobile: {{ mobileCols }};
+                    --icon-list-image-max-width: {{ maxWidth }}px;
+                    "
+    >
+        {% for item in data.widget.items %}
+            {% set image = item._image[0] %}
+
+            {% if image and image.attachment and image.attachment._urls %}
+                <div class="icon-list-widget__item">
+                    {% if item.link %}
+                    <a
+                            class="icon-list-widget__link"
+                            href="{{ item.link }}"
+                            {% if item.openInNewTab %}target="_blank" rel="noopener noreferrer"{% endif %}
+                            aria-label="{{ item.label or image.alt or image.title or 'Icon link' }}"
+                    >
+                        {% endif %}
+
+                        <img
+                                class="icon-list-widget__image"
+                                src="{{ image.attachment._urls.original }}"
+                                alt="{{ item.label or image.alt or image.title or '' }}"
+                                loading="lazy"
+                        >
+
+                        {% if item.link %}
+                    </a>
+                    {% endif %}
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endif %}
