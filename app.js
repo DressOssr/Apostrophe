@@ -12,7 +12,6 @@ apostrophe({
   // configuring user accounts.
 
   modules: {
-
     // Apostrophe module configuration
 
     // Note: most configuration occurs in the respective
@@ -44,27 +43,37 @@ apostrophe({
     '@apostrophecms/rich-text-widget': {},
     '@apostrophecms/image-widget': {},
     '@apostrophecms/video-widget': {},
+    // '@apostrophecms/flex-layout-widget': {},
     'button-widget': {},
     'github-prs-widget': {},
     'icon-list-widget': {},
     'hero-widget': {},
     'card-widget': {},
+    'overlay-card-widget': {},
+    'faq-widget': {},
     'card-title-rt-widget': {
       extend: '@apostrophecms/rich-text-widget',
       options: {
         defaultData: { content: '<h3 class="card__title">My Card Title</h3>' },
-      }
+      },
     },
     'card-content-rt-widget': {
       extend: '@apostrophecms/rich-text-widget',
       options: {
-        defaultData: { content: '<p class="card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>' },
-      }
+        defaultData: {
+          content:
+            '<p class="card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>',
+        },
+      },
     },
     'price-card-widget': {},
 
     // A page type for ordinary pages
     'default-page': {},
+    product: {},
+    'product-category': {},
+    'product-page': {},
+    'faq-page': {},
 
     // A piece type for articles
     article: {},
@@ -79,6 +88,6 @@ apostrophe({
     'article-category': {},
 
     // Import and export content
-    '@apostrophecms/import-export': {}
-  }
+    '@apostrophecms/import-export': {},
+  },
 });

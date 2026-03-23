@@ -1,0 +1,24 @@
+.flex-layout-widget {
+  width: 100%;
+}
+
+.flex-layout-widget__area {
+  display: flex;
+  flex-wrap: var(--flex-wrap, wrap);
+  justify-content: var(--flex-justify, center);
+  align-items: var(--flex-align, stretch);
+  gap: var(--flex-gap, 32px);
+}
+
+.flex-layout-widget__area > * {
+  width: 100%;
+  max-width: var(--flex-item-width, 380px);
+  flex: 0 1 var(--flex-item-width, 380px);
+}
+
+@media (max-width: 767px) {
+  .flex-layout-widget__area > * {
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+}

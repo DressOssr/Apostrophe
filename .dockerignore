@@ -1,0 +1,16 @@
+.vscode/
+.idea
+apos-build/
+badges/
+data/
+node_modules/
+public/uploads/
+.dockerignore
+.env
+.eslintignore
+.gitignore
+deploy-test-count
+docker-compose.yaml
+dockerfile
+force-deploy
+local.example.js

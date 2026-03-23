@@ -8,14 +8,10 @@ export default {
           '@apostrophecms/image',
           '@apostrophecms/file',
           '@apostrophecms/image-tag',
-          '@apostrophecms/file-tag'
-        ]
-      }
+          '@apostrophecms/file-tag',
+        ],
+      },
     ],
-    order: [
-      '@apostrophecms/image',
-      'article',
-      'article-category'
-    ]
-  }
+    order: ['@apostrophecms/image', 'article', 'article-category'],
+  },
 };

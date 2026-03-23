@@ -3,47 +3,48 @@ export default {
     locales: {
       en: {
         label: 'English',
-        flag: 'US'
+        flag: 'US',
       },
       fr: {
         label: 'French',
-        prefix: '/fr'
+        prefix: '/fr',
       },
       de: {
         label: 'German',
-        prefix: '/de'
-      }
+        prefix: '/de',
+      },
     },
     adminLocales: [
       {
         label: 'French',
-        value: 'fr'
+        value: 'fr',
       },
       {
         label: 'English',
-        value: 'en'
+        value: 'en',
       },
       {
         label: 'German',
-        value: 'de'
-      }
-    ]
+        value: 'de',
+      },
+    ],
   },
   i18n: {
     project: {
-      browser: true
-    }
+      browser: true,
+    },
   },
   extendHandlers(self) {
     return {
       '@apostrophecms/page:beforeSend': {
         async addLocalizations(_super, req) {
           await _super(req);
-          req.data.localizations?.forEach(locale => {
-            locale.flag = self.locales[locale.locale].flag || locale.locale.toUpperCase();
+          req.data.localizations?.forEach((locale) => {
+            locale.flag =
+              self.locales[locale.locale].flag || locale.locale.toUpperCase();
           });
-        }
-      }
+        },
+      },
     };
-  }
+  },
 };

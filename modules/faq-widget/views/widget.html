@@ -1,0 +1,43 @@
+{% set widget = data.widget %}
+
+<section class="mx-auto w-full max-w-4xl px-4 py-10">
+  {% if widget.title %}
+    <h2 class="mb-6 text-3xl font-bold text-slate-900">{{ widget.title }}</h2>
+  {% endif %}
+
+  {% if widget.items and widget.items.length %}
+    <div class="space-y-4" data-faq-widget>
+      {% for item in widget.items %}
+        <article
+          class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm"
+          data-faq-item
+        >
+          <button
+            type="button"
+            class="flex w-full items-center justify-between gap-4 px-5 py-4 text-left"
+            data-faq-trigger
+            aria-expanded="{{ 'true' if item.isOpenByDefault else 'false' }}"
+          >
+            <span class="text-base font-semibold text-slate-900">
+              {{ item.question }}
+            </span>
+
+            <span
+              class="shrink-0 text-2xl leading-none text-slate-500 transition-transform duration-200 {% if item.isOpenByDefault %}rotate-45{% endif %}"
+              data-faq-icon
+            >
+              +
+            </span>
+          </button>
+
+          <div
+            class="{% if item.isOpenByDefault %}block{% else %}hidden{% endif %} border-t border-slate-200 px-5 py-4 text-sm leading-6 text-slate-600"
+            data-faq-content
+          >
+            {{ item.answer }}
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  {% endif %}
+</section>

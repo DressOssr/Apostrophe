@@ -11,9 +11,9 @@ export default {
           '--faint-color',
           '--accent-color',
           '--default-color',
-          '--heading-color'
-        ]
-      }
+          '--heading-color',
+        ],
+      },
     },
     lightTableHeaderColor: {
       type: 'color',
@@ -26,9 +26,9 @@ export default {
           '--faint-color',
           '--accent-color',
           '--default-color',
-          '--heading-color'
-        ]
-      }
+          '--heading-color',
+        ],
+      },
     },
     lightTableBorderColor: {
       type: 'color',
@@ -41,9 +41,9 @@ export default {
           '--faint-color',
           '--accent-color',
           '--default-color',
-          '--heading-color'
-        ]
-      }
+          '--heading-color',
+        ],
+      },
     },
     darkTableHeaderBackgroundColor: {
       type: 'color',
@@ -56,9 +56,9 @@ export default {
           '--faint-color',
           '--accent-color',
           '--default-color',
-          '--heading-color'
-        ]
-      }
+          '--heading-color',
+        ],
+      },
     },
     darkTableHeaderColor: {
       type: 'color',
@@ -71,9 +71,9 @@ export default {
           '--faint-color',
           '--accent-color',
           '--default-color',
-          '--heading-color'
-        ]
-      }
+          '--heading-color',
+        ],
+      },
     },
     darkTableBorderColor: {
       type: 'color',
@@ -86,10 +86,10 @@ export default {
           '--faint-color',
           '--accent-color',
           '--default-color',
-          '--heading-color'
-        ]
-      }
-    }
+          '--heading-color',
+        ],
+      },
+    },
   },
   group: {
     tables: {
@@ -100,18 +100,18 @@ export default {
           fields: [
             'lightTableHeaderBackgroundColor',
             'lightTableHeaderColor',
-            'lightTableBorderColor'
-          ]
+            'lightTableBorderColor',
+          ],
         },
         darkMode: {
           label: 'project:darkMode',
           fields: [
             'darkTableHeaderBackgroundColor',
             'darkTableHeaderColor',
-            'darkTableBorderColor'
-          ]
-        }
-      }
-    }
-  }
+            'darkTableBorderColor',
+          ],
+        },
+      },
+    },
+  },
 };

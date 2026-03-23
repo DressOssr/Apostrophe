@@ -6,8 +6,9 @@ const localLinkConfig = klona(linkConfig.link);
 
 localLinkConfig.linkText.if =
   localLinkConfig.linkType.if =
-    localLinkConfig.linkTarget.if = {
-      orientation: 'vertical'
+  localLinkConfig.linkTarget.if =
+    {
+      orientation: 'vertical',
     };
 
 export default {
@@ -17,73 +18,78 @@ export default {
     icon: 'link-icon',
     previewImage: 'svg',
     description: 'project:cardAdd',
-    initialModal: false
+    initialModal: false,
   },
   fields: {
     add: {
       titleRT: {
         label: 'project:title',
         type: 'area',
-        def: [ 'card-title-rt' ],
+        def: ['card-title-rt'],
         options: {
           max: 1,
           widgets: {
             'card-title-rt': {
-              toolbar: [ 'styles' ],
+              toolbar: ['styles'],
               styles: [
                 {
                   tag: 'h3',
                   label: 'project:rtH3',
-                  class: 'card__title'
-                }
-              ]
-            }
-          }
-        }
+                  class: 'card__title',
+                },
+              ],
+            },
+          },
+        },
       },
       contentRT: {
         label: 'project:content',
         type: 'area',
-        def: [ 'card-content-rt' ],
+        def: ['card-content-rt'],
         options: {
           max: 1,
           widgets: {
             'card-content-rt': {
-              toolbar: [ 'styles' ],
+              toolbar: ['styles'],
               styles: [
                 {
                   tag: 'p',
                   label: 'project:rtParagraph',
-                  class: 'card__text'
-                }
-              ]
-            }
-          }
-        }
+                  class: 'card__text',
+                },
+              ],
+            },
+          },
+        },
+      },
+      image: {
+        label: 'project:image',
+        type: 'attachment',
+        fileGroup: 'images',
       },
       titleFontSize: {
         type: 'integer',
         label: 'Title font size (px)',
         def: 32,
         min: 12,
-        max: 80
+        max: 80,
       },
       textFontSize: {
         type: 'integer',
         label: 'Text font size (px)',
         def: 18,
         min: 10,
-        max: 40
+        max: 40,
       },
       icon: {
         label: 'project:icon',
         type: 'select',
-        choices: iconChoices
+        choices: iconChoices,
       },
       bg: {
         label: 'project:cardBackground',
         type: 'boolean',
-        def: true
+        def: true,
       },
       orientation: {
         label: 'project:orientation',
@@ -91,35 +97,35 @@ export default {
         choices: [
           {
             value: 'horizontal',
-            label: 'project:horizontal'
+            label: 'project:horizontal',
           },
           {
             value: 'vertical',
-            label: 'project:vertical'
-          }
+            label: 'project:vertical',
+          },
         ],
-        def: 'horizontal'
+        def: 'horizontal',
       },
       ...localLinkConfig,
       style: {
         type: 'select',
         label: 'project:linkStyle',
         if: {
-          orientation: 'vertical'
+          orientation: 'vertical',
         },
         choices: [
           {
             label: 'project:primary',
             value: 'primary',
-            def: true
+            def: true,
           },
           {
             label: 'project:outline',
-            value: 'outline'
-          }
-        ]
-      }
-    }
+            value: 'outline',
+          },
+        ],
+      },
+    },
   },
   styles: {
     add: {
@@ -129,8 +135,14 @@ export default {
         property: 'background-color',
         selector: '.card-widget',
         options: {
-          presetColors: [ '--surface-color', '#f8f9fa', '#e9ecef', '#dee2e6', '#ced4da' ]
-        }
+          presetColors: [
+            '--surface-color',
+            '#f8f9fa',
+            '#e9ecef',
+            '#dee2e6',
+            '#ced4da',
+          ],
+        },
       },
       iconColor: {
         label: 'project:iconColor',
@@ -138,8 +150,8 @@ export default {
         property: 'color',
         selector: '.card__icon svg',
         options: {
-          presetColors: [ '#fb5607', '#ff006e', '#8338ec', '#3a86ff' ]
-        }
+          presetColors: ['#fb5607', '#ff006e', '#8338ec', '#3a86ff'],
+        },
       },
       iconBackground: {
         label: 'project:iconBackground',
@@ -147,8 +159,8 @@ export default {
         property: 'background-color',
         selector: '.card__icon',
         options: {
-          presetColors: [ '#fb560730', '#ff006e30', '#8338ec30', '#3a86ff30' ]
-        }
+          presetColors: ['#fb560730', '#ff006e30', '#8338ec30', '#3a86ff30'],
+        },
       },
       border: {
         label: 'apostrophe:styleBorder',
@@ -156,14 +168,14 @@ export default {
         selector: '.card-widget',
         options: {
           flat: true,
-          hideLabel: true
+          hideLabel: true,
         },
         fields: {
           add: {
             active: {
               label: 'apostrophe:styleBorder',
               type: 'boolean',
-              def: false
+              def: false,
             },
             width: {
               label: 'apostrophe:styleBorderWidth',
@@ -172,56 +184,56 @@ export default {
                 top: 1,
                 right: 1,
                 bottom: 1,
-                left: 1
+                left: 1,
               },
               if: {
-                active: true
+                active: true,
               },
               unit: 'px',
-              property: 'border-%key%-width'
+              property: 'border-%key%-width',
             },
             color: {
               label: 'apostrophe:styleColor',
               type: 'color',
               if: {
-                active: true
+                active: true,
               },
               property: 'border-color',
               options: {
-                presetColors: [ '#6c757d', '#495057', '#343a40', '#212529' ]
-              }
+                presetColors: ['#6c757d', '#495057', '#343a40', '#212529'],
+              },
             },
             style: {
               label: 'apostrophe:styleStyle',
               type: 'select',
               def: 'solid',
               if: {
-                active: true
+                active: true,
               },
               choices: [
                 {
                   label: 'apostrophe:styleSolid',
-                  value: 'solid'
+                  value: 'solid',
                 },
                 {
                   label: 'apostrophe:styleDotted',
-                  value: 'dotted'
+                  value: 'dotted',
                 },
                 {
                   label: 'apostrophe:styleDashed',
-                  value: 'dashed'
-                }
+                  value: 'dashed',
+                },
               ],
-              property: 'border-style'
-            }
-          }
-        }
+              property: 'border-style',
+            },
+          },
+        },
       },
       boxShadow: {
         preset: 'boxShadow',
-        selector: '.card-widget'
-      }
-    }
+        selector: '.card-widget',
+      },
+    },
   },
   init(self) {
     self.addTextMigration();
@@ -230,56 +242,56 @@ export default {
     return {
       async addTextMigration() {
         self.apos.migration.add('card-widget-text-migration', () => {
-
-          return self.apos.migration.eachWidget({}, async (doc, widget, dotPath) => {
-
-            if (widget.type !== 'card') {
-              return;
-            }
-
-            const ensureArea = (key) => {
-              if (!widget[key]) {
+          return self.apos.migration.eachWidget(
+            {},
+            async (doc, widget, dotPath) => {
+              if (widget.type !== 'card') {
                 return;
               }
 
-              const rtKey = `${key}RT`;
+              const ensureArea = (key) => {
+                if (!widget[key]) {
+                  return;
+                }
 
-              if (!widget[rtKey]) {
-                widget[rtKey] = {
-                  _id: self.apos.util.generateId(),
-                  items: [],
-                  metaType: 'area'
-                };
-              }
+                const rtKey = `${key}RT`;
 
-              if (!widget[rtKey].items.length) {
-                widget[rtKey].items.push(makeItem(key, widget[key]));
-              }
-            };
+                if (!widget[rtKey]) {
+                  widget[rtKey] = {
+                    _id: self.apos.util.generateId(),
+                    items: [],
+                    metaType: 'area',
+                  };
+                }
 
-            const makeItem = (key, content) => ({
-              _id: self.apos.util.generateId(),
-              metaType: 'widget',
-              type: `card-${key}-rt`,
-              content:
+                if (!widget[rtKey].items.length) {
+                  widget[rtKey].items.push(makeItem(key, widget[key]));
+                }
+              };
+
+              const makeItem = (key, content) => ({
+                _id: self.apos.util.generateId(),
+                metaType: 'widget',
+                type: `card-${key}-rt`,
+                content:
                   key === 'title'
                     ? `<h3 class="card__title">${content}</h3>`
                     : `<p class="card__text">${content}</p>`,
-              permalinkIds: [],
-              imageIds: []
-            });
+                permalinkIds: [],
+                imageIds: [],
+              });
 
-            ensureArea('title');
-            ensureArea('content');
+              ensureArea('title');
+              ensureArea('content');
 
-            return self.apos.doc.db.updateOne(
-              { _id: doc._id },
-              { $set: { [dotPath]: widget } }
-            );
-          }
+              return self.apos.doc.db.updateOne(
+                { _id: doc._id },
+                { $set: { [dotPath]: widget } },
+              );
+            },
           );
         });
-      }
+      },
     };
-  }
+  },
 };

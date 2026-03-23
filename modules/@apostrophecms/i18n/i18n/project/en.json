@@ -133,6 +133,8 @@
   "priceTextHelp": "Ex. $20, Custom, etc",
   "priceUnit": "Price Unit Interval",
   "priceUnitHelp": "Optional Ex. /mo, /year",
+  "productPage": "Product Page",
+  "productPages": "Product Pages",
   "pricingCard": "Pricing Card",
   "pricingCardDescription": "A card that can display pricing and feature sets.",
   "primary": "Primary",

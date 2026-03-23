@@ -1,0 +1,6 @@
+node_modules
+public/apos-frontend
+data
+apos-build
+*.log
+

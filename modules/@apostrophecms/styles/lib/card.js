@@ -11,9 +11,9 @@ export default {
           '--surface-color',
           '--accent-color',
           '--default-color',
-          '--heading-color'
-        ]
-      }
+          '--heading-color',
+        ],
+      },
     },
     lightCardIconColor: {
       type: 'color',
@@ -30,9 +30,9 @@ export default {
           '#fb5607',
           '#ff006e',
           '#8338ec',
-          '#3a86ff'
-        ]
-      }
+          '#3a86ff',
+        ],
+      },
     },
     lightCardRadius: {
       label: 'project:borderRadius',
@@ -42,12 +42,12 @@ export default {
       min: 0,
       max: 30,
       selector: '.card-widget',
-      property: 'border-radius'
+      property: 'border-radius',
     },
     lightCardShadow: {
       preset: 'boxShadow',
       label: 'project:shadow',
-      selector: '.card-widget'
+      selector: '.card-widget',
     },
     darkCardBackgroundColor: {
       type: 'color',
@@ -60,9 +60,9 @@ export default {
           '--surface-color',
           '--accent-color',
           '--default-color',
-          '--heading-color'
-        ]
-      }
+          '--heading-color',
+        ],
+      },
     },
     darkCardIconColor: {
       type: 'color',
@@ -79,9 +79,9 @@ export default {
           '#fb5607',
           '#ff006e',
           '#8338ec',
-          '#3a86ff'
-        ]
-      }
+          '#3a86ff',
+        ],
+      },
     },
     darkCardRadius: {
       label: 'project:borderRadius',
@@ -91,13 +91,13 @@ export default {
       min: 0,
       max: 30,
       selector: '.dark.card-widget',
-      property: 'border-radius'
+      property: 'border-radius',
     },
     darkCardShadow: {
       preset: 'boxShadow',
       label: 'project:shadow',
-      selector: '.dark .card-widget'
-    }
+      selector: '.dark .card-widget',
+    },
   },
   group: {
     cards: {
@@ -109,8 +109,8 @@ export default {
             'lightCardBackgroundColor',
             'lightCardIconColor',
             'lightCardRadius',
-            'lightCardShadow'
-          ]
+            'lightCardShadow',
+          ],
         },
         darkMode: {
           label: 'project:darkMode',
@@ -118,10 +118,10 @@ export default {
             'darkCardBackgroundColor',
             'darkCardIconColor',
             'darkCardRadius',
-            'darkCardShadow'
-          ]
-        }
-      }
-    }
-  }
+            'darkCardShadow',
+          ],
+        },
+      },
+    },
+  },
 };

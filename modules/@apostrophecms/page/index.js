@@ -6,16 +6,24 @@ export default {
     types: [
       {
         name: 'default-page',
-        label: 'project:defaultPage'
+        label: 'project:defaultPage',
+      },
+      {
+        name: 'product-page',
+        label: 'project:productPage',
+      },
+      {
+        name: 'faq-page',
+        label: 'Faq Page',
       },
       {
         name: 'article-page',
-        label: 'project:articleIndexPage'
+        label: 'project:articleIndexPage',
       },
       {
         name: '@apostrophecms/home-page',
-        label: 'project:home'
-      }
-    ]
-  }
+        label: 'project:home',
+      },
+    ],
+  },
 };

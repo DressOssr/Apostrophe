@@ -9,15 +9,13 @@ export default {
       step: 10,
       unit: 'px',
       selector: ':root',
-      property: '--widget-spacer'
-    }
+      property: '--widget-spacer',
+    },
   },
   group: {
     widgets: {
       label: 'project:spacing',
-      fields: [
-        'widgetsSpacing'
-      ]
-    }
-  }
+      fields: ['widgetsSpacing'],
+    },
+  },
 };

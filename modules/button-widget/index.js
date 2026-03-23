@@ -6,7 +6,7 @@ export default {
     label: 'project:button',
     icon: 'cursor-default-click-icon',
     previewImage: 'svg',
-    description: 'project:buttonDescription'
+    description: 'project:buttonDescription',
   },
   fields: {
     add: {
@@ -14,8 +14,8 @@ export default {
       block: {
         type: 'boolean',
         label: 'project:fullWidth',
-        def: false
-      }
+        def: false,
+      },
       // alignment: {
       //   type: 'select',
       //   label: 'project:buttonAlignment',
@@ -35,7 +35,7 @@ export default {
       //     }
       //   ]
       // }
-    }
+    },
   },
   styles: {
     add: {
@@ -47,7 +47,7 @@ export default {
         max: 24,
         unit: 'px',
         selector: '.button',
-        property: 'font-size'
+        property: 'font-size',
       },
       radius: {
         label: 'project:borderRadius',
@@ -57,7 +57,7 @@ export default {
         min: 0,
         max: 50,
         selector: '.button',
-        property: 'border-radius'
+        property: 'border-radius',
       },
       color: {
         type: 'color',
@@ -69,9 +69,9 @@ export default {
           presetColors: [
             '--accent-color',
             '--default-color',
-            '--heading-color'
-          ]
-        }
+            '--heading-color',
+          ],
+        },
       },
       labelColor: {
         type: 'color',
@@ -84,9 +84,9 @@ export default {
             '--accent-color',
             '--default-color',
             '--heading-color',
-            '--contrast-color'
-          ]
-        }
+            '--contrast-color',
+          ],
+        },
       },
       alignment: {
         type: 'radio',
@@ -97,18 +97,18 @@ export default {
         choices: [
           {
             label: 'apostrophe:styleLeft',
-            value: 'flex-start'
+            value: 'flex-start',
           },
           {
             label: 'apostrophe:styleCenter',
-            value: 'center'
+            value: 'center',
           },
           {
             label: 'apostrophe:styleRight',
-            value: 'flex-end'
-          }
-        ]
-      }
-    }
-  }
+            value: 'flex-end',
+          },
+        ],
+      },
+    },
+  },
 };

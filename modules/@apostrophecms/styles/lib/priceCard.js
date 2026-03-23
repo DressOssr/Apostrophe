@@ -11,9 +11,9 @@ export default {
           '--surface-color',
           '--accent-color',
           '--default-color',
-          '--heading-color'
-        ]
-      }
+          '--heading-color',
+        ],
+      },
     },
     lightPriceCardIconColor: {
       type: 'color',
@@ -30,9 +30,9 @@ export default {
           '#fb5607',
           '#ff006e',
           '#8338ec',
-          '#3a86ff'
-        ]
-      }
+          '#3a86ff',
+        ],
+      },
     },
     lightPriceCardRadius: {
       label: 'project:borderRadius',
@@ -42,7 +42,7 @@ export default {
       min: 0,
       max: 30,
       selector: '.price-card-widget',
-      property: 'border-radius'
+      property: 'border-radius',
     },
     darkPriceCardBackgroundColor: {
       type: 'color',
@@ -55,9 +55,9 @@ export default {
           '--surface-color',
           '--accent-color',
           '--default-color',
-          '--heading-color'
-        ]
-      }
+          '--heading-color',
+        ],
+      },
     },
     darkPriceCardIconColor: {
       type: 'color',
@@ -74,9 +74,9 @@ export default {
           '#fb5607',
           '#ff006e',
           '#8338ec',
-          '#3a86ff'
-        ]
-      }
+          '#3a86ff',
+        ],
+      },
     },
     darkPriceCardRadius: {
       label: 'project:borderRadius',
@@ -86,8 +86,8 @@ export default {
       min: 0,
       max: 30,
       selector: '.dark .price-card-widget',
-      property: 'border-radius'
-    }
+      property: 'border-radius',
+    },
   },
   group: {
     priceCards: {
@@ -98,18 +98,18 @@ export default {
           fields: [
             'lightPriceCardBackgroundColor',
             'lightPriceCardIconColor',
-            'lightPriceCardRadius'
-          ]
+            'lightPriceCardRadius',
+          ],
         },
         darkMode: {
           label: 'project:darkMode',
           fields: [
             'darkPriceCardBackgroundColor',
             'darkPriceCardIconColor',
-            'darkPriceCardRadius'
-          ]
-        }
-      }
-    }
-  }
+            'darkPriceCardRadius',
+          ],
+        },
+      },
+    },
+  },
 };

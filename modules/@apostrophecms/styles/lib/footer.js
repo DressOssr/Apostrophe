@@ -12,9 +12,9 @@ export default {
           '--accent-color',
           '--default-color',
           '--heading-color',
-          '--faint-color'
-        ]
-      }
+          '--faint-color',
+        ],
+      },
     },
     lightFooterColor: {
       type: 'color',
@@ -29,9 +29,9 @@ export default {
           '--accent-color',
           '--default-color',
           '--heading-color',
-          '--faint-color'
-        ]
-      }
+          '--faint-color',
+        ],
+      },
     },
     lightFooterFont: {
       type: 'select',
@@ -42,25 +42,26 @@ export default {
       choices: [
         {
           label: 'project:fontRoboto',
-          value: '"Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"'
+          value:
+            '"Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
         },
         {
           label: 'project:fontQuicksand',
-          value: '"Quicksand", sans-serif;'
+          value: '"Quicksand", sans-serif;',
         },
         {
           label: 'project:fontPoppins',
-          value: '"Poppins", sans-serif;'
+          value: '"Poppins", sans-serif;',
         },
         {
           label: 'project:fontInter',
-          value: '"Inter", sans-serif;'
+          value: '"Inter", sans-serif;',
         },
         {
           label: 'project:fontGeorgia',
-          value: '"Georgia", serif;'
-        }
-      ]
+          value: '"Georgia", serif;',
+        },
+      ],
     },
     darkFooterBackgroundColor: {
       type: 'color',
@@ -74,9 +75,9 @@ export default {
           '--accent-color',
           '--default-color',
           '--heading-color',
-          '--faint-color'
-        ]
-      }
+          '--faint-color',
+        ],
+      },
     },
     darkFooterColor: {
       type: 'color',
@@ -91,9 +92,9 @@ export default {
           '--accent-color',
           '--default-color',
           '--heading-color',
-          '--faint-color'
-        ]
-      }
+          '--faint-color',
+        ],
+      },
     },
     darkFooterFont: {
       type: 'select',
@@ -104,26 +105,27 @@ export default {
       choices: [
         {
           label: 'project:fontRoboto',
-          value: '"Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"'
+          value:
+            '"Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
         },
         {
           label: 'project:fontQuicksand',
-          value: '"Quicksand", sans-serif;'
+          value: '"Quicksand", sans-serif;',
         },
         {
           label: 'project:fontPoppins',
-          value: '"Poppins", sans-serif;'
+          value: '"Poppins", sans-serif;',
         },
         {
           label: 'project:fontInter',
-          value: '"Inter", sans-serif;'
+          value: '"Inter", sans-serif;',
         },
         {
           label: 'project:fontGeorgia',
-          value: '"Georgia", serif;'
-        }
-      ]
-    }
+          value: '"Georgia", serif;',
+        },
+      ],
+    },
   },
   group: {
     footer: {
@@ -134,18 +136,18 @@ export default {
           fields: [
             'lightFooterBackgroundColor',
             'lightFooterFont',
-            'lightFooterColor'
-          ]
+            'lightFooterColor',
+          ],
         },
         darkMode: {
           label: 'project:darkMode',
           fields: [
             'darkFooterBackgroundColor',
             'darkFooterFont',
-            'darkFooterColor'
-          ]
-        }
-      }
-    }
-  }
+            'darkFooterColor',
+          ],
+        },
+      },
+    },
+  },
 };

@@ -1,0 +1,38 @@
+{% set widget = data.widget %}
+{% set image = widget.image %}
+
+<section
+  class="overlay-card-widget
+    overlay-card-widget--x-{{ widget.anchorX or 'center' }}
+    overlay-card-widget--y-{{ widget.anchorY or 'bottom' }}
+    {% if widget.shadow %}overlay-card-widget--shadow{% endif %}"
+  style="
+                --overlay-card-width: {{ widget.cardWidth or 420 }}px;
+                --overlay-card-x: {{ widget.offsetX or 0 }}px;
+                --overlay-card-y: {{ widget.offsetY or 0 }}px;
+                --overlay-card-bg: {{ widget.cardBackground or '#f3f4f6' }};
+                --overlay-card-radius: {{ widget.borderRadius or 24 }}px;
+                --overlay-card-text-align: {{ widget.textAlign or 'center' }};
+                "
+>
+  <div class="overlay-card-widget__media">
+    {% if image %}
+      <img
+        class="overlay-card-widget__image"
+        src="{{ widget.image._urls.original }}"
+        alt="{{ image.name or '' }}"
+        loading="lazy"
+      />
+    {% endif %}
+
+    <div class="overlay-card-widget__card">
+      {% if widget.title %}
+        <h3 class="overlay-card-widget__title">{{ widget.title }}</h3>
+      {% endif %}
+
+      {% if widget.text %}
+        <div class="overlay-card-widget__text">{{ widget.text }}</div>
+      {% endif %}
+    </div>
+  </div>
+</section>

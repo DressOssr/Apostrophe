@@ -1,5 +1,5 @@
 export default {
   options: {
-    ignoreNoCodeWarning: true
-  }
+    ignoreNoCodeWarning: true,
+  },
 };

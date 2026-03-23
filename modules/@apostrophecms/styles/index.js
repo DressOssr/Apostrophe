@@ -19,7 +19,7 @@ export default {
       ...priceCard.fields,
       ...footer.fields,
       ...table.fields,
-      ...spacing.fields
+      ...spacing.fields,
     },
     group: {
       ...nav.group,
@@ -30,7 +30,7 @@ export default {
       ...priceCard.group,
       ...table.group,
       ...spacing.group,
-      ...footer.group
-    }
-  }
+      ...footer.group,
+    },
+  },
 };

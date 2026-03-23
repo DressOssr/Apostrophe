@@ -1,5 +1,12 @@
-const darkColors = [ '#000000', '#232323', '#343434', '#464646', '#575757', '#7a7a7a' ];
-const lightColors = [ '#f8f9fa', '#dee2e6', '#adb5bd', '#6c757d', '#495057' ];
+const darkColors = [
+  '#000000',
+  '#232323',
+  '#343434',
+  '#464646',
+  '#575757',
+  '#7a7a7a',
+];
+const lightColors = ['#f8f9fa', '#dee2e6', '#adb5bd', '#6c757d', '#495057'];
 const strongAccents = [
   '#5e5bd7',
   '#ec5ac0',
@@ -8,10 +15,10 @@ const strongAccents = [
   '#ecd9bf',
   '#5dae89',
   '#eb5159',
-  '#f3eee9'
+  '#f3eee9',
 ];
-const surfaceLight = [ '#dd6e42', '#e8dab2', '#4f6d7a', '#c0d6df', '#eaeaea' ];
-const surfaceDark = [ '#5a3b72', '#3f2d76', '#081664', '#04447b', '#065c6c' ];
+const surfaceLight = ['#dd6e42', '#e8dab2', '#4f6d7a', '#c0d6df', '#eaeaea'];
+const surfaceDark = ['#5a3b72', '#3f2d76', '#081664', '#04447b', '#065c6c'];
 export default {
   fields: {
     defaultColorLight: {
@@ -22,8 +29,8 @@ export default {
       property: '--default-color',
       def: '#4a4b64',
       options: {
-        presetColors: darkColors
-      }
+        presetColors: darkColors,
+      },
     },
     headingColorLight: {
       type: 'color',
@@ -33,8 +40,8 @@ export default {
       property: '--heading-color',
       def: '#242859',
       options: {
-        presetColors: darkColors
-      }
+        presetColors: darkColors,
+      },
     },
     faintColorLight: {
       type: 'color',
@@ -44,8 +51,8 @@ export default {
       property: '--faint-color',
       def: '#e8e8e8',
       options: {
-        presetColors: darkColors
-      }
+        presetColors: darkColors,
+      },
     },
     accentColorLight: {
       type: 'color',
@@ -55,8 +62,8 @@ export default {
       property: '--accent-color',
       def: '#0b1ae9',
       options: {
-        presetColors: strongAccents
-      }
+        presetColors: strongAccents,
+      },
     },
     contrastColorLight: {
       type: 'color',
@@ -66,8 +73,8 @@ export default {
       property: '--contrast-color',
       def: '#ffffff',
       options: {
-        presetColors: lightColors
-      }
+        presetColors: lightColors,
+      },
     },
     backgroundColorLight: {
       type: 'color',
@@ -76,8 +83,8 @@ export default {
       property: '--background-color',
       def: '#ffffff',
       options: {
-        presetColors: lightColors
-      }
+        presetColors: lightColors,
+      },
     },
     surfaceColorLight: {
       type: 'color',
@@ -87,9 +94,8 @@ export default {
       property: '--surface-color',
       def: '#efefef',
       options: {
-        presetColors: surfaceLight
-
-      }
+        presetColors: surfaceLight,
+      },
     },
     defaultColorDark: {
       type: 'color',
@@ -99,8 +105,8 @@ export default {
       property: '--default-color',
       def: '#e8e7f7',
       options: {
-        presetColors: lightColors
-      }
+        presetColors: lightColors,
+      },
     },
     headingColorDark: {
       type: 'color',
@@ -110,8 +116,8 @@ export default {
       property: '--heading-color',
       def: '#ffffff',
       options: {
-        presetColors: lightColors
-      }
+        presetColors: lightColors,
+      },
     },
     faintColorDark: {
       type: 'color',
@@ -121,8 +127,8 @@ export default {
       property: '--faint-color',
       def: '#303034',
       options: {
-        presetColors: darkColors
-      }
+        presetColors: darkColors,
+      },
     },
     accentColorDark: {
       type: 'color',
@@ -132,8 +138,8 @@ export default {
       property: '--accent-color',
       def: '#524dd3',
       options: {
-        presetColors: strongAccents
-      }
+        presetColors: strongAccents,
+      },
     },
     contrastColorDark: {
       type: 'color',
@@ -143,8 +149,8 @@ export default {
       property: '--contrast-color',
       def: '#ffffff',
       options: {
-        presetColors: lightColors
-      }
+        presetColors: lightColors,
+      },
     },
     backgroundColorDark: {
       type: 'color',
@@ -153,8 +159,8 @@ export default {
       property: '--background-color',
       def: '#05071e',
       options: {
-        presetColors: darkColors
-      }
+        presetColors: darkColors,
+      },
     },
     surfaceColorDark: {
       type: 'color',
@@ -164,9 +170,9 @@ export default {
       property: '--surface-color',
       def: '#131428',
       options: {
-        presetColors: surfaceDark
-      }
-    }
+        presetColors: surfaceDark,
+      },
+    },
   },
   group: {
     colors: {
@@ -181,8 +187,8 @@ export default {
             'accentColorLight',
             'contrastColorLight',
             'backgroundColorLight',
-            'surfaceColorLight'
-          ]
+            'surfaceColorLight',
+          ],
         },
         darkMode: {
           label: 'project:darkMode',
@@ -193,10 +199,10 @@ export default {
             'accentColorDark',
             'contrastColorDark',
             'backgroundColorDark',
-            'surfaceColorDark'
-          ]
-        }
-      }
-    }
-  }
+            'surfaceColorDark',
+          ],
+        },
+      },
+    },
+  },
 };

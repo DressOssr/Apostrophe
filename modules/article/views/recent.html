@@ -1,11 +1,13 @@
 {% import 'article-page:fragments.html' as fragments with context %}
 
-<div class="widget
+<div
+  class="widget
   article-widget
   article-excerpts
   {% if data.display %}
-  article-excerpts--display-{{ data.display }}
-  {% endif%}">
+    article-excerpts--display-{{ data.display }}
+  {% endif %}"
+>
   {% if data.articles.length %}
     {% for article in data.articles %}
       {% render fragments.excerpt(article) %}
