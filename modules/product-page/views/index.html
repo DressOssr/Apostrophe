@@ -5,7 +5,44 @@
 
 {% block main %}
   <section class="mx-auto max-w-7xl px-4 py-10">
+      {% set paginationUrl = data.url %}
+      {% if data.selectedCategoryId %}
+        {% set paginationUrl = data.url + '?_category=' + (data.selectedCategoryId | urlencode) %}
+      {% endif %}
+
       <h1 class="mb-6 text-3xl font-bold">Products</h1>
+
+      {% if data.categoryOptions and data.categoryOptions.length > 1 %}
+        <form method="get" class="mb-8 flex flex-wrap items-center gap-3">
+          <label
+            class="text-sm font-medium text-slate-700"
+            for="product-category-filter"
+          >
+            Category
+          </label>
+          <select
+            id="product-category-filter"
+            name="_category"
+            class="rounded-lg border border-slate-300 bg-white px-4 py-2 text-slate-900"
+          >
+            <option value="">All categories</option>
+            {% for option in data.categoryOptions %}
+              <option
+                value="{{ option._id }}"
+                {% if data.selectedCategoryId == option._id %}selected{% endif %}
+              >
+                {{ option.title }}
+              </option>
+            {% endfor %}
+          </select>
+          <button
+            type="submit"
+            class="rounded-lg bg-green-600 px-4 py-2 text-sm font-medium text-white hover:bg-green-700"
+          >
+            Apply
+          </button>
+        </form>
+      {% endif %}
 
       {% if data.pieces.length %}
         <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -108,7 +145,7 @@
           </div>
 
           <div class="border-t border-slate-100 pt-4 text-slate-700">
-            {{ pager.render({ page: data.currentPage, total: data.totalPages, class: 'pagination--products' }, data.url) }}
+            {{ pager.render({ page: data.currentPage, total: data.totalPages, class: 'pagination--products' }, paginationUrl) }}
           </div>
         </div>
       </div>
