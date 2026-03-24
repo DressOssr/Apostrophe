@@ -5,14 +5,14 @@ export default {
     label: 'project:articleRecentArticles',
     description: 'project:articleWidgetDescription',
     icon: 'text-subject',
-    previewImage: 'svg'
+    previewImage: 'svg',
   },
   fields: {
     add: {
       limit: {
         type: 'integer',
         label: 'project:limit',
-        def: 5
+        def: 5,
       },
       display: {
         type: 'select',
@@ -21,17 +21,17 @@ export default {
         choices: [
           {
             label: 'project:vertical',
-            value: 'vertical'
+            value: 'vertical',
           },
           {
             label: 'project:horizontal',
-            value: 'horizontal'
-          }
-        ]
-      }
-    }
+            value: 'horizontal',
+          },
+        ],
+      },
+    },
   },
   icons: {
-    'text-subject': 'TextSubject'
-  }
+    'text-subject': 'TextSubject',
+  },
 };

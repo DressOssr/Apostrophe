@@ -1,0 +1,47 @@
+.container-widget {
+  width: 100%;
+  margin: 0;
+  padding: var(--container-padding-y, 64px) var(--container-padding-x, 24px);
+}
+
+.container-widget + .container-widget {
+  margin-top: 0;
+}
+
+.container-widget--white {
+  background: #ffffff;
+}
+
+.container-widget--gray {
+  background: #f5f5f5;
+}
+
+.container-widget--dark {
+  background: #1f2430;
+  color: #ffffff;
+}
+
+.container-widget--transparent {
+  background: transparent;
+}
+
+.container-widget__inner {
+  width: 100%;
+  max-width: var(--container-max-width, 1200px);
+  margin: 0 auto;
+}
+
+.container-widget__items {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* remove default outer spacing from first/last child if needed */
+.container-widget__items > *:first-child {
+  margin-top: 0;
+}
+
+.container-widget__items > *:last-child {
+  margin-bottom: 0;
+}

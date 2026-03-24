@@ -7,21 +7,21 @@ export default {
     imageStyles: [
       {
         value: 'image-full',
-        label: 'project:fullWidth'
+        label: 'project:fullWidth',
       },
       {
         value: 'image-center',
-        label: 'project:center'
+        label: 'project:center',
       },
       {
         value: 'image-float-left',
-        label: 'project:left'
+        label: 'project:left',
       },
       {
         value: 'image-float-right',
-        label: 'project:right'
-      }
-    ]
+        label: 'project:right',
+      },
+    ],
   },
   styles: {
     add: {
@@ -33,18 +33,18 @@ export default {
         choices: [
           {
             label: 'apostrophe:styleLeft',
-            value: 'apos-left'
+            value: 'apos-left',
           },
           {
             label: 'apostrophe:styleCenter',
-            value: 'apos-center'
+            value: 'apos-center',
           },
           {
             label: 'apostrophe:styleRight',
-            value: 'apos-right'
-          }
-        ]
-      }
-    }
-  }
+            value: 'apos-right',
+          },
+        ],
+      },
+    },
+  },
 };

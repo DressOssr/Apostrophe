@@ -6,9 +6,9 @@ export default {
       content: {
         type: 'area',
         options: {
-          widgets: fullConfig
-        }
-      }
-    }
-  }
+          widgets: fullConfig,
+        },
+      },
+    },
+  },
 };

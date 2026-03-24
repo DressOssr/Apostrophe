@@ -7,62 +7,62 @@ const localIcons = klona(iconChoices);
 export default {
   extend: '@apostrophecms/widget-type',
   icons: {
-    'card-bulleted-icon': 'CardBulleted'
+    'card-bulleted-icon': 'CardBulleted',
   },
   options: {
     label: 'project:pricingCard',
     icon: 'card-bulleted-icon',
     previewImage: 'svg',
-    description: 'project:pricingCardDescription'
+    description: 'project:pricingCardDescription',
   },
   fields: {
     add: {
       title: {
         label: 'project:title',
-        type: 'string'
+        type: 'string',
       },
       content: {
         label: 'project:content',
-        type: 'string'
+        type: 'string',
       },
       badge: {
         label: 'project:addBadge',
         type: 'boolean',
-        def: false
+        def: false,
       },
       badgeIcon: {
         if: {
-          badge: true
+          badge: true,
         },
         label: 'project:icon',
         type: 'select',
-        choices: localIcons
+        choices: localIcons,
       },
       badgeLabel: {
         if: {
-          badge: true
+          badge: true,
         },
         label: 'project:badgeLabel',
-        type: 'string'
+        type: 'string',
       },
       featured: {
         label: 'project:specialBackground',
         type: 'boolean',
-        def: false
+        def: false,
       },
       priceText: {
         label: 'project:priceText',
         help: 'project:priceTextHelp',
-        type: 'string'
+        type: 'string',
       },
       priceTextUnit: {
         label: 'project:priceUnit',
         help: 'project:priceUnitHelp',
-        type: 'string'
+        type: 'string',
       },
       priceDetail: {
         label: 'project:priceDetail',
-        type: 'string'
+        type: 'string',
       },
       features: {
         type: 'array',
@@ -73,10 +73,10 @@ export default {
           add: {
             item: {
               type: 'string',
-              label: 'project:feature'
-            }
-          }
-        }
+              label: 'project:feature',
+            },
+          },
+        },
       },
       buttonStyle: {
         label: 'project:buttonStyle',
@@ -86,16 +86,16 @@ export default {
         choices: [
           {
             label: 'project:primary',
-            value: 'primary'
+            value: 'primary',
           },
           {
             label: 'project:outline',
-            value: 'outline'
-          }
-        ]
+            value: 'outline',
+          },
+        ],
       },
-      ...localLinkConfig
-    }
+      ...localLinkConfig,
+    },
   },
   styles: {
     add: {
@@ -110,9 +110,9 @@ export default {
             '--surface-color',
             '--accent-color',
             '--default-color',
-            '--heading-color'
-          ]
-        }
+            '--heading-color',
+          ],
+        },
       },
       textColor: {
         type: 'color',
@@ -124,9 +124,9 @@ export default {
           presetColors: [
             '--accent-color',
             '--default-color',
-            '--heading-color'
-          ]
-        }
+            '--heading-color',
+          ],
+        },
       },
       buttonBackgroundColor: {
         type: 'color',
@@ -144,9 +144,9 @@ export default {
             '#fb5607',
             '#ff006e',
             '#8338ec',
-            '#3a86ff'
-          ]
-        }
+            '#3a86ff',
+          ],
+        },
       },
       badgeColor: {
         type: 'color',
@@ -164,10 +164,10 @@ export default {
             '#fb5607',
             '#ff006e',
             '#8338ec',
-            '#3a86ff'
-          ]
-        }
-      }
-    }
-  }
+            '#3a86ff',
+          ],
+        },
+      },
+    },
+  },
 };

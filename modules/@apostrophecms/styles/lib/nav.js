@@ -7,11 +7,11 @@ export default {
         top: 18,
         right: 15,
         bottom: 18,
-        left: 15
+        left: 15,
       },
       unit: 'px',
       selector: '.nav a',
-      property: 'padding'
+      property: 'padding',
     },
     navWeight: {
       type: 'select',
@@ -19,25 +19,25 @@ export default {
       choices: [
         {
           label: 'project:normal',
-          value: '400'
+          value: '400',
         },
         {
           label: 'project:semibold',
-          value: '500'
+          value: '500',
         },
         {
           label: 'project:bold',
-          value: '700'
-        }
+          value: '700',
+        },
       ],
       def: '400',
       selector: '.nav a',
-      property: 'font-weight'
+      property: 'font-weight',
     },
     navShadow: {
       preset: 'boxShadow',
       label: 'project:shadow',
-      selector: '.nav-bar'
+      selector: '.nav-bar',
     },
     navRadius: {
       type: 'range',
@@ -47,18 +47,13 @@ export default {
       max: 50,
       label: 'project:borderRadius',
       selector: '.nav-bar',
-      property: 'border-radius'
-    }
+      property: 'border-radius',
+    },
   },
   group: {
     nav: {
       label: 'project:navigation',
-      fields: [
-        'navPadding',
-        'navWeight',
-        'navRadius',
-        'navShadow'
-      ]
-    }
-  }
+      fields: ['navPadding', 'navWeight', 'navRadius', 'navShadow'],
+    },
+  },
 };

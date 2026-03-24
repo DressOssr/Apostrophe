@@ -5,7 +5,7 @@ export default {
     label: 'project:ghPrLabel',
     previewImage: 'svg',
     icon: 'github',
-    description: 'project:ghPrDescription'
+    description: 'project:ghPrDescription',
   },
   components(self) {
     return {
@@ -14,29 +14,30 @@ export default {
         const token = self.options.token;
         const options = token
           ? {
-            headers: {
-              Authorization: `token ${token}`
+              headers: {
+                Authorization: `token ${token}`,
+              },
             }
-          }
           : {};
         let body = {};
         try {
           body = await self.apos.http.get(
             `https://api.github.com/repos/${w.repo}/pulls?state=${w.state}&per_page=${w.limit}`,
-            options
+            options,
           );
         } catch (error) {
           if (error.status === 403 && !token) {
-            body.message = 'Rate limit exceeded, see README for providing a GitHub API token';
+            body.message =
+              'Rate limit exceeded, see README for providing a GitHub API token';
           } else {
             body.message = 'Something went wrong :(';
           }
         }
         return {
           response: body,
-          widget: w
+          widget: w,
         };
-      }
+      },
     };
   },
   fields: {
@@ -46,7 +47,7 @@ export default {
         label: 'project:repo',
         def: 'apostrophecms/apostrophe',
         help: 'project:formattedLike',
-        required: true
+        required: true,
       },
       limit: {
         type: 'integer',
@@ -54,7 +55,7 @@ export default {
         def: 5,
         required: true,
         max: 100,
-        min: 1
+        min: 1,
       },
       state: {
         type: 'select',
@@ -64,15 +65,15 @@ export default {
           {
             label: 'project:open',
             value: 'open',
-            def: true
+            def: true,
           },
           {
             label: 'project:closed',
-            value: 'closed'
-          }
-        ]
-      }
-    }
+            value: 'closed',
+          },
+        ],
+      },
+    },
   },
   styles: {
     add: {
@@ -86,16 +87,16 @@ export default {
             '--surface-color',
             '--accent-color',
             '--default-color',
-            '--heading-color'
-          ]
-        }
+            '--heading-color',
+          ],
+        },
       },
       border: 'border',
       padding: 'padding',
-      boxShadow: 'boxShadow'
-    }
+      boxShadow: 'boxShadow',
+    },
   },
   icons: {
-    github: 'Github'
-  }
+    github: 'Github',
+  },
 };

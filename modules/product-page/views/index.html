@@ -1,0 +1,154 @@
+{% extends "layout.html" %}
+
+{% import '@apostrophecms/pager:macros.html' as pager with context %}
+
+
+{% block main %}
+  <section class="mx-auto max-w-7xl px-4 py-10">
+      {% set paginationUrl = data.url %}
+      {% if data.selectedCategoryId %}
+        {% set paginationUrl = data.url + '?_category=' + (data.selectedCategoryId | urlencode) %}
+      {% endif %}
+
+      <h1 class="mb-6 text-3xl font-bold">Products</h1>
+
+      {% if data.categoryOptions and data.categoryOptions.length > 1 %}
+        <form method="get" class="mb-8 flex flex-wrap items-center gap-3">
+          <label
+            class="text-sm font-medium text-slate-700"
+            for="product-category-filter"
+          >
+            Category
+          </label>
+          <select
+            id="product-category-filter"
+            name="_category"
+            class="rounded-lg border border-slate-300 bg-white px-4 py-2 text-slate-900"
+          >
+            <option value="">All categories</option>
+            {% for option in data.categoryOptions %}
+              <option
+                value="{{ option._id }}"
+                {% if data.selectedCategoryId == option._id %}selected{% endif %}
+              >
+                {{ option.title }}
+              </option>
+            {% endfor %}
+          </select>
+          <button
+            type="submit"
+            class="rounded-lg bg-green-600 px-4 py-2 text-sm font-medium text-white hover:bg-green-700"
+          >
+            Apply
+          </button>
+        </form>
+      {% endif %}
+
+      {% if data.pieces.length %}
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {% for product in data.pieces %}
+            <article
+              class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm"
+            >
+              <div class="flex h-64 items-center justify-center p-6">
+                <img
+                  src="{{ product.imageUrl }}"
+                  alt="{{ product.title }}"
+                  class="max-h-full w-auto object-contain"
+                />
+              </div>
+              <div class="space-y-3 p-5">
+                <h2 class="line-clamp-2 text-base font-semibold text-slate-900">
+                  {{ product.title }}
+                </h2>
+
+                <p class="text-sm text-slate-500">{{ product._category[0].title if product._category and product._category[0] else '' }}</p>
+
+                <p class="line-clamp-3 text-sm text-slate-600">
+                  {{ product.description }}
+                </p>
+
+                <div class="flex items-center justify-between">
+                  <span class="text-xl font-bold text-slate-900">
+                    ${{ product.price }}
+                  </span>
+
+                  <a
+                    href="{{ product._url }}"
+                    class="rounded-lg bg-green-600 px-4 py-2 text-sm text-white no-underline hover:bg-green-700"
+                  >
+                    View
+                  </a>
+                </div>
+              </div>
+            </article>
+          {% endfor %}
+        </div>
+      {% else %}
+        <div
+          class="rounded-xl border border-dashed border-slate-300 p-10 text-center text-slate-500"
+        >
+          No products found
+        </div>
+      {% endif %}
+
+{#      {% if data.pagination.totalPages > 1 %}#}
+{#        <nav class="mt-10 flex items-center justify-center gap-2">#}
+{#          {% if data.pagination.hasPrev %}#}
+{#            <a#}
+{#              href="?category={{ data.filters.category | urlencode }}&page={{ data.pagination.page - 1 }}"#}
+{#              class="rounded-lg border border-slate-300 px-4 py-2 text-slate-700 no-underline"#}
+{#            >#}
+{#              Prev#}
+{#            </a>#}
+{#          {% endif %}#}
+
+{#          {% for p in range(1, data.pagination.totalPages + 1) %}#}
+{#            <a#}
+{#              href="?category={{ data.filters.category | urlencode }}&page={{ p }}"#}
+{#              class="rounded-lg px-4 py-2 no-underline {% if p == data.pagination.page %}#}
+{#                bg-green-600 text-white#}
+{#              {% else %}#}
+{#                border border-slate-300 text-slate-700#}
+{#              {% endif %}"#}
+{#            >#}
+{#              {{ p }}#}
+{#            </a>#}
+{#          {% endfor %}#}
+
+{#          {% if data.pagination.hasNext %}#}
+{#            <a#}
+{#              href="?category={{ data.filters.category | urlencode }}&page={{ data.pagination.page + 1 }}"#}
+{#              class="rounded-lg border border-slate-300 px-4 py-2 text-slate-700 no-underline"#}
+{#            >#}
+{#              Next#}
+{#            </a>#}
+{#          {% endif %}#}
+{#        </nav>#}
+{#      {% endif %}#}
+
+    {% if data.totalPages > 1 %}
+      <div class="mt-14 flex justify-center">
+        <div class="w-full max-w-xl rounded-2xl border border-slate-200 bg-white px-6 py-5 shadow-sm">
+          <div class="mb-4 flex items-center justify-between gap-4">
+            <div>
+              <p class="text-sm font-medium uppercase tracking-[0.12em] text-slate-400">
+                Navigation
+              </p>
+              <h3 class="mt-1 text-xl font-semibold text-slate-900">
+                Browse product pages
+              </h3>
+            </div>
+            <div class="rounded-full bg-slate-100 px-3 py-1 text-sm font-medium text-slate-600">
+              Page {{ data.currentPage }} of {{ data.totalPages }}
+            </div>
+          </div>
+
+          <div class="border-t border-slate-100 pt-4 text-slate-700">
+            {{ pager.render({ page: data.currentPage, total: data.totalPages, class: 'pagination--products' }, paginationUrl) }}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  </section>
+{% endblock %}

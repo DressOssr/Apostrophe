@@ -1,0 +1,16 @@
+<section
+  class="container-widget container-widget--{{ data.widget.background or 'white' }}"
+  style="
+                --container-max-width: {{ data.widget.maxWidth or 1200 }}px;
+                --container-padding-y: {{ data.widget.paddingY or 64 }}px;
+                --container-padding-x: {{ data.widget.paddingX or 24 }}px;
+                "
+>
+  <div class="container-widget__inner">
+    {%
+      area data.widget, 'items' with {
+          aposClassName: 'container-widget__items'
+      }
+    %}
+  </div>
+</section>

@@ -1,5 +1,6 @@
 */.DS_Store
 # ignore vim swapfiles
+.idea
 *.swp
 /storybook-static
 /public/apos-frontend

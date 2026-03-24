@@ -1,0 +1,9 @@
+@import 'tailwindcss';
+
+@source "../../../views";
+@source "../../../modules";
+@source "../../../app.js";
+@source "..";
+
+/* Safelist layout utilities because Apostrophe's build can miss template scanning. */
+@source inline("w-full bg-[#f5f7fa] mx-auto flex h-20 max-w-[1200px] items-center gap-4 px-4 lg:px-8 m-0 inline-flex gap-2 text-[1.75rem] font-semibold text-[#263238] no-underline h-9 w-auto h-6 ml-auto hidden md:block list-none gap-8 p-0 text-[15px] font-medium text-[#18191f] text-[#4caf4f] hover:text-[#4caf4f] md:flex text-sm hover:text-[#3f9f43] rounded-md px-5 py-2 text-white hover:bg-[#3f9f43] border border-[#4caf4f] px-3 py-2 md:hidden fixed inset-0 z-50 flex-col justify-center bg-[#263238f0] p-8 absolute right-6 top-6 text-3xl text-base max-w-[1140px] mt-0 py-16 grid grid-cols-1 gap-12 lg:grid-cols-[1.2fr_2fr] lg:gap-20 flex-wrap justify-center max-w-[1200px] lg:grid-cols-[1fr_1fr_1.2fr] md:grid-cols-2 lg:gap-12 text-left text-2xl mb-6 mt-0 relative h-12 rounded-lg border-0 bg-white/20 outline-none placeholder:text-white/70 text-white/80 leading-6");

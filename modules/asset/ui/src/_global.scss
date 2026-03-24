@@ -55,9 +55,9 @@ main {
   margin-right: auto;
   margin-left: auto;
 
-  @media screen and (max-width: 600px) {
-    overflow: scroll;
-  }
+  //@media screen and (max-width: 600px) {
+  //  overflow: scroll;
+  //}
 }
 
 .sr-only {

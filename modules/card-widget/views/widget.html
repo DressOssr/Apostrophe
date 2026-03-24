@@ -1,44 +1,45 @@
 {% import 'link.html' as link %}
 {% import '@apostrophecms/template:macros/icons.html' as icons with context %}
 {% set widget = data.widget %}
-
 <div
-        class="
+  class="
     widget card-widget
     card-widget--bg-{{ widget.bg }}
     card-widget--orientation-{{ widget.orientation }}
   "
-        style="
+  style="
                 --card-title-size: {{ widget.titleFontSize or 32 }}px;
                 --card-text-size: {{ widget.textFontSize or 18 }}px;
                 "
 >
-  {% if widget.icon %}
-    <div class="card__icon">
-      {{ icons[widget.icon]() }}
+  {% if widget.image and widget.image._id %}
+    <div class="card__image">
+      <img src="{{ widget.image._urls.original }}" />
     </div>
   {% endif %}
 
-  <div class="card__content">
-    <div class="card__title-container">
-      {% area widget, 'titleRT' %}
-    </div>
+  {% if widget.icon %}
+    <div class="card__icon">{{ icons[widget.icon]() }}</div>
+  {% endif %}
 
-    <div class="card__text-container">
-      {% area widget, 'contentRT' %}
-    </div>
+  <div class="card__content">
+    <div class="card__title-container">{% area widget, 'titleRT' %}</div>
+
+    <div class="card__text-container">{% area widget, 'contentRT' %}</div>
   </div>
 
   {% if widget.linkText %}
     <div class="card__link">
       {% set path = apos.helper.linkPath(widget) %}
       {% set class = 'button ' + widget.style %}
-      {{ link.render({
-        label: widget.linkText,
-        path: path,
-        target: widget.linkTarget,
-        class: class
-      })}}
+      {{
+        link.render({
+            label: widget.linkText,
+            path: path,
+            target: widget.linkTarget,
+            class: class
+        })
+      }}
     </div>
   {% endif %}
 </div>

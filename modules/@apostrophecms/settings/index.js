@@ -2,27 +2,27 @@ export default {
   options: {
     subforms: {
       title: {
-        fields: [ 'title' ],
+        fields: ['title'],
         protection: true,
-        reload: true
+        reload: true,
       },
       adminLocale: {
-        fields: [ 'adminLocale' ]
+        fields: ['adminLocale'],
       },
       changePassword: {
-        fields: [ 'password' ]
-      }
+        fields: ['password'],
+      },
     },
 
     groups: {
       account: {
         label: 'project:account',
-        subforms: [ 'title', 'changePassword' ]
+        subforms: ['title', 'changePassword'],
       },
       preferences: {
         label: 'project:preferences',
-        subforms: [ 'adminLocale' ]
-      }
-    }
-  }
+        subforms: ['adminLocale'],
+      },
+    },
+  },
 };

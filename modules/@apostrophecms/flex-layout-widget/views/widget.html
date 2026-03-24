@@ -1,0 +1,18 @@
+{% set widget = data.widget %}
+
+<div
+  class="flex-layout-widget"
+  style="
+                --flex-justify: {{ widget.justifyContent or 'center' }};
+                --flex-align: {{ widget.alignItems or 'stretch' }};
+                --flex-gap: {{ widget.gap or 32 }}px;
+                --flex-item-width: {{ widget.itemWidth or 380 }}px;
+                --flex-wrap: {{ widget.wrap ? 'wrap' : 'nowrap' }};
+                "
+>
+  {%
+    area widget, 'items' with {
+        aposClassName: 'flex-layout-widget__area'
+    }
+  %}
+</div>

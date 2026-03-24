@@ -8,8 +8,7 @@ export default {
           label: 'project:breakpointResponsive',
           width: '95vw',
           height: '800px',
-          icon: 'monitor-icon',
-          shortcut: true
+          icon: 'monitor-icon'
         },
         nestHub: {
           label: 'project:breakpointNestHub',

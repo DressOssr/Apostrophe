@@ -1,0 +1,37 @@
+.pagination--products {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.pagination--products a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 42px;
+  height: 42px;
+  padding: 0 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.75rem;
+  background: #fff;
+  color: #334155;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.pagination--products a:hover {
+  border-color: #4caf4f;
+  color: #4caf4f;
+  background: #f0fdf4;
+}
+
+.pagination--products .current,
+.pagination--products [aria-current='page'] {
+  background: #4caf4f;
+  border-color: #4caf4f;
+  color: #fff;
+}

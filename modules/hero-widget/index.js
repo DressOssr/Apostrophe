@@ -6,7 +6,7 @@ export default {
     label: 'project:hero',
     icon: 'link-icon',
     previewImage: 'svg',
-    description: 'project:heroDescription'
+    description: 'project:heroDescription',
   },
   fields: {
     add: {
@@ -18,32 +18,28 @@ export default {
         options: {
           widgets: {
             '@apostrophecms/rich-text': {
-              toolbar: [
-                'styles',
-                'bold',
-                'italic'
-              ],
+              toolbar: ['styles', 'bold', 'italic'],
               styles: [
                 {
                   tag: 'p',
-                  label: 'project:rtParagraph'
+                  label: 'project:rtParagraph',
                 },
                 {
                   tag: 'h2',
-                  label: 'project:rtH2'
+                  label: 'project:rtH2',
                 },
                 {
                   tag: 'h3',
-                  label: 'project:rtH3'
+                  label: 'project:rtH3',
                 },
                 {
                   tag: 'h4',
-                  label: 'project:rtH4'
-                }
-              ]
-            }
-          }
-        }
+                  label: 'project:rtH4',
+                },
+              ],
+            },
+          },
+        },
       },
       links: {
         label: 'project:buttonLinks',
@@ -60,25 +56,25 @@ export default {
                 {
                   label: 'project:primary',
                   value: 'primary',
-                  def: true
+                  def: true,
                 },
                 {
                   label: 'project:outline',
-                  value: 'outline'
-                }
-              ]
-            }
-          }
-        }
-      }
-    }
+                  value: 'outline',
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
   },
   styles: {
     add: {
       width: {
         preset: 'width',
-        selector: '.hero-widget'
-      }
-    }
-  }
+        selector: '.hero-widget',
+      },
+    },
+  },
 };

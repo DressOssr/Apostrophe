@@ -1,6 +1,5 @@
 {% import '@apostrophecms/pager:macros.html' as pager with context %}
 {% import 'fragments.html' as fragments with context %}
-
 {% extends "layout.html" %}
 
 {% block pageTitle %}
@@ -14,20 +13,22 @@
       <ul class="article-topic-filters">
         <li>
           <a
-          href="?"
-          {% if not data.query.categories %}
-            class="active"
-          {% endif %}
-          >All Articles</a>
+            href="?"
+            {% if not data.query.categories %}
+              class="active"
+            {% endif %}
+            >All Articles</a
+          >
         </li>
         {% for category in data._categories %}
           <li>
-            <a 
-            href="?categories={{ category.slug }}"
-            {% if data.query.categories and data.query.categories === category.slug %}
-              class="active"
-            {% endif %}
-            >{{ category.title }}</a>
+            <a
+              href="?categories={{ category.slug }}"
+              {% if data.query.categories and data.query.categories === category.slug %}
+                class="active"
+              {% endif %}
+              >{{ category.title }}</a
+            >
           </li>
         {% endfor %}
       </ul>
@@ -42,7 +43,9 @@
     </header>
 
     {# Give first two excerpts a different treatment #}
-    <div class="article-excerpts article-excerpts--display-horizontal article-excerpts--display-featured">
+    <div
+      class="article-excerpts article-excerpts--display-horizontal article-excerpts--display-featured"
+    >
       {% for article in data.pieces %}
         {% if loop.index === 1 or loop.index === 2 %}
           {% render fragments.excerpt(article) %}
@@ -59,6 +62,5 @@
       {% endfor %}
     </div>
     {{ pager.render({ page: data.currentPage, total: data.totalPages }, data.url) }}
-
   </section>
 {% endblock %}

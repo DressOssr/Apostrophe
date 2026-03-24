@@ -71,7 +71,7 @@ export default () => {
     }
 
     // Sync toggle UI with current state
-    toggle.checked = (pref === 'dark');
+    toggle.checked = pref === 'dark';
 
     toggle.addEventListener('change', toggleMode);
   });
