@@ -29,6 +29,9 @@ apostrophe({
 
     // A home for our own project-specific javascript and SASS assets
     asset: {},
+    permission: {},
+    'permission-group': {},
+    'site-auth': {},
 
     // Template helpers
     helper: {},
@@ -70,6 +73,8 @@ apostrophe({
 
     // A page type for ordinary pages
     'default-page': {},
+    'login-page': {},
+    'register-page': {},
     product: {},
     'product-category': {},
     'product-page': {},
